@@ -19,10 +19,9 @@ public static void main(String[] args) {
       System.out.println("Panjang Kalimat yang diinputkan tidak boleh lebih dari 250 karakter!");
     }else if (input.length()<=250){ 
     
-    //	spiral.displaySpiral(input);
     String encrypted = spiral.enkripsiKalimatSpiral(input);
     System.out.println("\nEnkripsi Kalimat\t: " + encrypted);
-    //  spiral.displaySpiralDeskripsi(encrypted);
+
     String descrypted = spiral.deskripsiKalimatSpiral(encrypted);
     System.out.println("\nDesripsi Kalimat\t: " + descrypted);
 

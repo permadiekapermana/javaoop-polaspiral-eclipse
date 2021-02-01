@@ -79,55 +79,10 @@ public class Spiral extends Pola {
 		return nilai;
 	}
 	
-	//	method display matrix spiral
-	public void displaySpiral(String input) {
-		
-		//		String input = getKalimat_input();
-		int jumlahBaris = Spiral.getBaris(input.length());
-		int jumlahKolom = Spiral.getKolom(input.length());		
-		int panjangKalimat = input.length();
-		int centerBaris = Spiral.getCenterBaris(jumlahBaris);
-        int centerKolom = Spiral.getCenterKolom(jumlahKolom);
-        int pointerBaris = centerBaris;
-        int pointerKolom = centerKolom;
-		
-		String[][] spiral = new String[jumlahBaris][jumlahKolom];
-		
-		for (int i=0; i <panjangKalimat; i++) {
-            int ar = i+1;
-            spiral[pointerBaris][pointerKolom] = input.charAt(i) + "";
-            int arrowArray = getDirection(ar);
-            if (arrowArray == 1) {
-                pointerKolom++;
-            } else if (arrowArray == 2) {
-                pointerBaris++;
-            } else if (arrowArray == 3) {
-                pointerKolom--;
-            } else if (arrowArray == 0) {
-                pointerBaris--;
-            }
-        }
-		
-		System.out.println("\nMatrix Spiral\t:");
-		for (int i=0; i<spiral.length; i++) {
-            for (int j=0; j<spiral[i].length; j++) {
-                if (spiral[i][j]==null) {
-                    System.out.print("-");
-                } else if (spiral[i][j].equals(" ")) {
-                    System.out.print("-");
-                } else {
-                    System.out.print(spiral[i][j]);
-                }
-            }
-            System.out.println();
-        }
-		
-	}
 	
 	//	method tampil hasil enkripsi
 	public String enkripsiKalimatSpiral(String input) {
 		
-		//		String input = getKalimat_input();
 		int jumlahBaris = Spiral.getBaris(input.length());
 		int jumlahKolom = Spiral.getKolom(input.length());		
 		int panjangKalimat = input.length();
@@ -158,79 +113,22 @@ public class Spiral extends Pola {
             for (int j=0; j<spiral[i].length; j++) {
                 if (spiral[i][j]==null) {
                 	sb.append("-");
-                	//	System.out.print("-");
                 } else if (spiral[i][j].equals(" ")) {
                 	sb.append("-");
-                	//	System.out.print("-");
                 } else {
                 	sb.append(spiral[i][j]);
-                	//	System.out.print(spiral[i][j]);
                 }
             }
             
         }        
-        //	System.out.println(sb);
         input = sb.toString();
         return input;
 	}
 	
-	//	method display matrix spiral deskripsi
-	public void displaySpiralDeskripsi(String encrypted) {
-		
-		// String input = encrypted;
-		int jumlahBaris = Spiral.getBaris(encrypted.length());
-		int jumlahKolom = Spiral.getKolom(encrypted.length());		
-		int panjangKalimat = encrypted.length();
-		int centerBaris = Spiral.getCenterBaris(jumlahBaris);
-        int centerKolom = Spiral.getCenterKolom(jumlahKolom);
-        int pointerBaris = centerBaris;
-        int pointerKolom = centerKolom;
-		
-		String[][] spiral = new String[jumlahBaris][jumlahKolom];
-		
-		int z = 0;
-		for(int j = 0; j < jumlahBaris; j ++) {
-	        for(int k = 0;k<jumlahKolom;k++) {
-	        	spiral[j][k] = encrypted.charAt(z) + "";
-	        	z++;
-	        }
-	    }
-		
-		System.out.println("\nMatrix Spiral Deskripsi\t:");
-		for (int i=0; i<spiral.length; i++) {
-            for (int j=0; j<spiral[i].length; j++) {
-                if (spiral[i][j]==null) {
-                    System.out.print("-");
-                } else if (spiral[i][j].equals(" ")) {
-                    System.out.print("-");
-                } else {
-                    System.out.print(spiral[i][j]);
-                }
-            }
-            System.out.println();
-        }
-		
-//		for (int i=0; i <panjangKalimat; i++) {
-//		      int ar = i+1;
-//		      spiral[pointerBaris][pointerKolom] = encrypted.charAt(i) + "";
-//		      int arrowArray = getDirection(ar);
-//		      if (arrowArray == 1) {
-//		          pointerKolom++;
-//		      } else if (arrowArray == 2) {
-//		          pointerBaris++;
-//		      } else if (arrowArray == 3) {
-//		          pointerKolom--;
-//		      } else if (arrowArray == 0) {
-//		          pointerBaris--;
-//		      }
-//		  }
-						
-	}
 	
-//	method tampil hasil enkripsi
+	//	method tampil hasil enkripsi
 	public String deskripsiKalimatSpiral(String encrypted) {
 		
-		//		String input = getKalimat_input();
 		int jumlahBaris = Spiral.getBaris(encrypted.length());
 		int jumlahKolom = Spiral.getKolom(encrypted.length());		
 		int panjangKalimat = encrypted.length();
@@ -270,23 +168,6 @@ public class Spiral extends Pola {
             }
         }
 		
-		
-//        for (int i=0; i<spiral.length; i++) {
-//            for (int j=0; j<spiral[i].length; j++) {
-//                if (spiral[i][j]==null) {
-//                	sb.append("-");
-//                	//	System.out.print("-");
-//                } else if (spiral[i][j].equals(" ")) {
-//                	sb.append("-");
-//                	//	System.out.print("-");
-//                } else {
-//                	sb.append(spiral[i][j]);
-//                	//	System.out.print(spiral[i][j]);
-//                }
-//            }
-//            
-//        }        
-        //	System.out.println(sb);
         encrypted = sb.toString();
         return encrypted;
 	}
